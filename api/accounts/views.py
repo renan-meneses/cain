@@ -1,4 +1,4 @@
-from rest_framework import generics, permissions, serializers, status
+from rest_framework import generics, permissions, status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -29,11 +29,6 @@ class RegistrationAPIView(generics.GenericAPIView):
             data["access"] = str(refresh.access_token)
 
         return Response(data, status.HTTP_201_CREATED)
-
-
-class VerifyOTPSerializer(serializers.Serializer):  # noqa: F811
-    email = serializers.EmailField()
-    otp = serializers.CharField()
 
 
 class LogoutBlacklistTokenUpdateView(APIView):

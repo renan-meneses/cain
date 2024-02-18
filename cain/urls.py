@@ -3,8 +3,6 @@ from django.urls import include, path
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
-from rest_framework_simplejwt.views import TokenObtainPairView  # noqa: E501
-from rest_framework_simplejwt.views import TokenRefreshView
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -21,8 +19,6 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path("settings/", admin.site.urls),
-    path("api/signin/", TokenObtainPairView.as_view()),
-    path("api/token/refresh/", TokenRefreshView.as_view()),
     path(
         "api/docs/",
         schema_view.with_ui("swagger", cache_timeout=0),
