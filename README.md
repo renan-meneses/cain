@@ -1,4 +1,8 @@
 # Cain
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/cookiecutter/cookiecutter-django/master.svg)](https://results.pre-commit.ci/latest/github/enan-meneses/cain/main)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
 
 ## Project structure
 
@@ -10,6 +14,7 @@
 - celery==5.3.6
 - certifi==2024.2.2
 - cffi==1.16.0
+- cfgv==3.4.0
 - charset-normalizer==3.3.2
 - click==8.1.7
 - click-didyoumean==0.3.0
@@ -20,6 +25,7 @@
 - cron-descriptor==1.4.3
 - cryptography==42.0.3
 - defusedxml==0.7.1
+- distlib==0.3.8
 - Django==4.2.10
 - django-celery-beat==2.5.0
 - django-celery-results==2.5.1
@@ -37,16 +43,21 @@
 - drf-yasg==1.21.7
 - et-xmlfile==1.1.0
 - Faker==23.2.1
+- filelock==3.13.1
+- identify==2.5.34
 - idna==3.6
 - inflection==0.5.1
 - itypes==1.2.0
 - Jinja2==3.1.3
 - kombu==5.3.5
 - MarkupSafe==2.1.5
+- nodeenv==1.8.0
 - oauthlib==3.2.2
 - openapi-codec==1.3.2
 - openpyxl==3.1.2
 - packaging==23.2
+- platformdirs==4.2.0
+- pre-commit==3.6.1
 - prompt-toolkit==3.0.43
 - pycparser==2.21
 - PyJWT==2.8.0
@@ -70,7 +81,11 @@
 - uritemplate==4.1.1
 - urllib3==2.2.1
 - vine==5.1.0
+- virtualenv==20.25.0
 - wcwidth==0.2.13
+- python-decouple==3.8
+- psycopg2-binary==2.9.9
+
 
 
  ## [Quick start](#quickstart)
