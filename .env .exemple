@@ -1,0 +1,13 @@
+SECRET_KEY=lfj9cf_zd*du$l$hr$^+qsj$cobz&!dv4o
+DEBUG=TRUE
+EXPIRE_TOKEN= #minutes
+EXPIRE_REFRESH_TOKEN=  #minutes
+ALLOWED_HOSTS=['localhost']
+#DB SETTINGS
+DB_NAME=""
+DB_USER=""
+DB_PASSWORD=""
+DB_HOST=""
+DB_PORT=""
+#REDIS SETTINGS
+REDIS_HOST=" "

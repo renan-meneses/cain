@@ -1,0 +1,50 @@
+version: "3.5"  
+
+networks:
+  template01.network:
+    driver: bridge
+
+volumes:
+  db.bruce:
+    driver: local
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - db.bruce:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=bruce
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+    ports:
+      - 5432:5432
+    networks:
+      - template01.network
+
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning
+    volumes:
+      - db.bruce:/var/lib/redis/data
+    networks:
+          - template01.network
+
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    networks:
+      - template01.network
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - db
