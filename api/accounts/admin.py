@@ -5,10 +5,10 @@ from .models import User
 
 
 class UserAdminConfig(UserAdmin):
-    search_fields = ("email", "name, surname")
+    search_fields = ("email", "name", "surname")
     ordering = ("start_date",)
 
-    list_display = ("email", "id", "name, surname", "is_active", "is_staff")
+    list_display = ("email", "id", "name", "surname", "is_active", "is_staff")
 
     fieldsets = (
         (
@@ -16,7 +16,8 @@ class UserAdminConfig(UserAdmin):
             {
                 "fields": (
                     "email",
-                    "name, surname",
+                    "name",
+                    "surname",
                 )
             },
         ),
@@ -30,7 +31,8 @@ class UserAdminConfig(UserAdmin):
                 "classes": ("wide",),
                 "fields": (
                     "email",
-                    "name, surname",
+                    "name",
+                    "surname",
                     "password1",
                     "password2",
                     "is_staff",

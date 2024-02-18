@@ -18,12 +18,20 @@ repos:
     hooks:
       - id: isort
         types: [file, python]
+        exclude: api/accounts/views.py
+
   - repo: https://github.com/psf/black
     rev: "22.3.0"
     hooks:
       - id: black
         types: [file, python]
-        exclude: migrations/
+        exclude: |
+          (?x)^(
+            cain/settings.py|
+            migrations/|
+            api/accounts/migrations/|
+            api/accounts/views.py|
+          )$
   - repo: https://github.com/PyCQA/flake8
     rev: 3.8.4
     hooks:
@@ -32,6 +40,7 @@ repos:
           (?x)^(
             cain/settings.py|
             migrations/|
+            api/accounts/migrations/|
           )$
         additional_dependencies:
           [

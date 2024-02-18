@@ -16,6 +16,7 @@ DEBUG = config("DEBUG")
 
 ALLOWED_HOSTS = ast.literal_eval(str(config("ALLOWED_HOSTS")))
 
+AUTH_USER_MODEL = "accounts.User"
 
 # Application definition
 
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
     "django_celery_beat",
     "django_filters",
     "rest_framework.authtoken",
+    "rest_framework_simplejwt.token_blacklist",
     "rest_framework",
     "rest_framework_simplejwt",
     "drf_yasg",

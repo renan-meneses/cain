@@ -4,7 +4,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework_simplejwt.views import TokenObtainPairView
 
-from .email import *  # noqa: F403
+from .email import *  # noqa: F403, F401
 from .models import User
 from .serializers import (
     MyTokenObtainPairSerializer,
@@ -20,13 +20,15 @@ class MyTokenObtainPairView(TokenObtainPairView):
 
 class RegistrationAPIView(generics.GenericAPIView):
     serializer_class = RegistrationSerializer
+    permission_classes = (permissions.AllowAny,)
 
     def post(self, request, *args, **kwargs):
+        print(request)
         serializer = self.get_serializer(data=request.data)
         data = {}
         if serializer.is_valid(raise_exception=True):
             user = serializer.save()
-            send_otp(serializer.data["email"])  # noqa: F405
+            # send_otp(serializer.data["email"])  # noqa: F405
             data["response"] = "Registration Successful!"
             refresh = RefreshToken.for_user(user=user)
             data["refresh"] = str(refresh)
