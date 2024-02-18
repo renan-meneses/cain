@@ -30,7 +30,7 @@ repos:
       - id: flake8
         exclude: |
           (?x)^(
-            core/settings.py|
+            cain/settings.py|
             migrations/|
           )$
         additional_dependencies:
