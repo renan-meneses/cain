@@ -12,7 +12,7 @@ class ListEnterprise(generics.GenericAPIView):
 
     def get(self, request, *args, **kwargs):
         try:
-            queryset = self.get_queryset()
+            queryset = EnterprisesModel.objects.filter(associates=request.user)
             serialize = EnterpriseSerializer(queryset, many=True)
             return Response(serialize.data, status=status.HTTP_200_OK)
         except Exception as e:
