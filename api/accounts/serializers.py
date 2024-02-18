@@ -44,8 +44,3 @@ class RegistrationSerializer(serializers.ModelSerializer):
         user.set_password(self.validated_data["password"])
         user.save()
         return user
-
-
-class VerifyOTPSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    otp = serializers.CharField()

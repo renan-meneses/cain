@@ -18,7 +18,11 @@ repos:
     hooks:
       - id: isort
         types: [file, python]
-        exclude: api/accounts/views.py
+        exclude: |
+          (?x)^(
+            api/accounts/views.py|
+            api/accounts/urls.py|
+          )$
 
   - repo: https://github.com/psf/black
     rev: "22.3.0"
@@ -31,6 +35,7 @@ repos:
             migrations/|
             api/accounts/migrations/|
             api/accounts/views.py|
+            api/accounts/urls.py|
           )$
   - repo: https://github.com/PyCQA/flake8
     rev: 3.8.4

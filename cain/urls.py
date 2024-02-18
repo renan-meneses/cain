@@ -8,7 +8,7 @@ from rest_framework_simplejwt.views import TokenRefreshView
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Bruce API",
+        title="Cain API",
         default_version="v1",
         description="Gerenciado de colaboradores",
         terms_of_service="https://www.google.com/policies/terms/",
