@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt",
     "drf_yasg",
     "api.accounts",
+    "api.enterprises",
 ]
 
 MIDDLEWARE = [
@@ -131,9 +132,9 @@ REST_FRAMEWORK = {
 
 SIMPLE_JWT = {
     "USER_ID_FIELD": "id",
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=int(os.getenv("EXPIRE_TOKEN", 20))),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=int(20)),
     "REFRESH_TOKEN_LIFETIME": timedelta(
-        minutes=int(os.getenv("EXPIRE_REFRESH_TOKEN", 60))
+        minutes=int(60)
     ),
 }
 

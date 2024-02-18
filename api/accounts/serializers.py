@@ -21,11 +21,6 @@ class RegistrationSerializer(serializers.ModelSerializer):
         fields = ["email", "name", "surname", "password", "password2"]
         extra_kwargs = {"password": {"write_only": True}}
 
-    """
-    Save method to create a new user and store in the database.
-    Returns: User: The newly created user object.
-    """
-
     def save(self):
         password = self.validated_data["password"]
         password2 = self.validated_data["password2"]

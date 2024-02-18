@@ -18,7 +18,6 @@ class RegistrationAPIView(generics.GenericAPIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request, *args, **kwargs):
-        print(request)
         serializer = self.get_serializer(data=request.data)
         data = {}
         if serializer.is_valid(raise_exception=True):
