@@ -1,0 +1,8 @@
+-r requirements/base.txt
+asynctest
+pytest-cov
+pytest-deadfixtures
+pytest-django
+pytest-env
+pytest-pythonpath
+pytest
