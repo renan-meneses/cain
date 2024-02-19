@@ -1,10 +1,12 @@
 # Cain
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/cookiecutter/cookiecutter-django/master.svg)](https://results.pre-commit.ci/latest/github/enan-meneses/cain/main)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
-[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GNU AGPLv3 License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/agpl-3.0/)
 
 
-## Project structure
+## Project
+
+Sistema voltado a gerenciamento de associados, ME e MEI, sistema construído com Python 3.11, utilizando os frameworks Django.
 
 ## Prerequisites Libs
 

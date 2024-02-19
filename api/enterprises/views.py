@@ -19,7 +19,7 @@ class ListEnterprise(generics.GenericAPIView):
             return Response(serialize.data, status=status.HTTP_200_OK)
         except Exception as e:
             response = {"erro": str(e)}
-            return Response(response, status=status.HTTP_404_NOT_FOUND)
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, *args, **kwargs):
         try:
@@ -34,7 +34,7 @@ class ListEnterprise(generics.GenericAPIView):
             return Response(data, status=status.HTTP_201_CREATED)
         except Exception as e:
             response = {"erro": str(e)}
-            return Response(response, status=status.HTTP_404_NOT_FOUND)
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
 
 class CreateEmployment(generics.GenericAPIView):
@@ -51,7 +51,7 @@ class CreateEmployment(generics.GenericAPIView):
             return Response(serialize.data, status=status.HTTP_200_OK)
         except Exception as e:
             response = {"erro": str(e)}
-            return Response(response, status=status.HTTP_404_NOT_FOUND)
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
 
     def post(self, request, *args, **kwargs):
         try:
@@ -72,4 +72,4 @@ class CreateEmployment(generics.GenericAPIView):
             return Response(data, status=status.HTTP_201_CREATED)
         except Exception as e:
             response = {"erro": str(e)}
-            return Response(response, status=status.HTTP_404_NOT_FOUND)
+            return Response(response, status=status.HTTP_400_BAD_REQUEST)
