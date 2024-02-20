@@ -14,3 +14,4 @@ class EnterprisesModel(BaseModel):
     corporate = models.CharField(max_length=150, unique=True)
     fantasy = models.CharField(max_length=150, unique=True)
     associates = models.ManyToManyField(User, related_name="work_for")
+    situation = models.CharField(max_length=15)

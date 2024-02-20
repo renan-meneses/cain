@@ -40,7 +40,7 @@ class UserTeste(APITestCase):
                 response = self.client.post(url, data, format="json")
                 self.assertEqual(
                     response.status_code, status.HTTP_400_BAD_REQUEST
-                )  # noaq: E%01
+                )  # noaq: E501
 
             def test_login(self):
                 url = reverse("token_obtain_pair")
@@ -60,7 +60,7 @@ class UserTeste(APITestCase):
                 response = self.client.post(url, data, format="json")
                 self.assertEqual(
                     response.status_code, status.HTTP_400_BAD_REQUEST
-                )  # noaq: E%01
+                )  # noaq: E501
 
             def test_login_null_email(self):
                 url = reverse("token_obtain_pair")
@@ -71,4 +71,4 @@ class UserTeste(APITestCase):
                 response = self.client.post(url, data, format="json")
                 self.assertEqual(
                     response.status_code, status.HTTP_400_BAD_REQUEST
-                )  # noaq: E%01
+                )  # noaq: E501

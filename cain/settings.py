@@ -148,8 +148,8 @@ PAGE_SIZE = os.environ.get("PAGE_SIZE", 25)
 
 # Celery
 CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers.DatabaseScheduler"
-CELERY_BROKER_URL = "redis://127.0.0.1:6379"
-CELERY_RESULT_BACKEND = "redis://127.0.0.1:6379"
+CELERY_BROKER_URL = config("REDIS_HOST")
+CELERY_RESULT_BACKEND = config("REDIS_HOST")
 CELERY_ACCEPT_CONTENT = ["application/json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
