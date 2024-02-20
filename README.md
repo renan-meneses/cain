@@ -132,3 +132,9 @@ Para inciar a aplicação com docker compose, basta rodar o comando abaixo:
 ```sh
 docker compose up -d
 ```
+
+## Postman
+
+Download the app to get started using the Postman API Platform today. Or, if you prefer a browser experience, you can try the web version of Postman. [Downloads](https://www.postman.com/downloads/)
+
+collection [Cain APi](https://renan-menese.postman.co/workspace/My-Workspace~8e4f57c8-7424-43a0-8667-4be280aea8b4/collection/18389628-9889cc88-fed0-4e43-9706-5b8d0587eacf?action=share&creator=18389628&active-environment=18389628-fb3db639-1b51-4c35-ac7a-3b946a81061b)
